@@ -9,6 +9,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: 'Flutter Login',
       debugShowCheckedModeBanner: false,
       home: MyHomePage(),
     );
@@ -28,7 +29,8 @@ class MyHomePage extends StatelessWidget {
             child: Stack(
               children: [
                 Container(
-                  child: Image.network('https://i.postimg.cc/bNLjncNR/mona-eendra-f-Io-Q-a-Rycys-unsplash.jpg'),
+                  child: Image.network(
+                      'https://i.postimg.cc/bNLjncNR/mona-eendra-f-Io-Q-a-Rycys-unsplash.jpg'),
                   //'https://i.postimg.cc/vTBFTJv2/laurin-scheuber-s-LNMo7wv74-unsplash.jpg'),
                 ),
                 Padding(
@@ -71,7 +73,7 @@ class MyHomePage extends StatelessWidget {
                             child: Text(
                               "Log In",
                               style: GoogleFonts.roboto(
-                                  fontSize: 30, fontWeight: FontWeight.bold),
+                                  color: Colors.green[900], fontSize: 30, fontWeight: FontWeight.bold),
                             ),
                           ),
                           SizedBox(
@@ -110,8 +112,10 @@ class MyHomePage extends StatelessWidget {
                             height: 10,
                           ),
                           Center(
-                            child: FlatButton(
-                              onPressed: null,
+                            child: MaterialButton(
+                              onPressed: (){
+                                print("pressed");
+                              },
                               child: Material(
                                 elevation: 10,
                                 borderRadius: BorderRadius.circular(10),
@@ -124,8 +128,8 @@ class MyHomePage extends StatelessWidget {
                                           begin: Alignment.topLeft,
                                           end: Alignment.bottomRight,
                                           colors: [
-                                            Colors.greenAccent[400],
-                                            Colors.blueAccent[700]
+                                            Color(0xff69f0ae),
+                                            Color(0xff2962ff)
                                           ])),
                                   child: Center(
                                     child: Text(
@@ -133,7 +137,7 @@ class MyHomePage extends StatelessWidget {
                                       style: GoogleFonts.roboto(
                                           color: Colors.white,
                                           fontWeight: FontWeight.bold,
-                                          fontSize: 1),
+                                          fontSize: 17),
                                     ),
                                   ),
                                 ),
@@ -154,6 +158,7 @@ class MyHomePage extends StatelessWidget {
                                 ),
                               ),
                               Text("Don't have an Account?",
+                                  textAlign: TextAlign.center,
                                   style: GoogleFonts.roboto(
                                       color: Colors.grey[700])),
                               Expanded(
@@ -171,6 +176,7 @@ class MyHomePage extends StatelessWidget {
                           ),
                           Center(
                             child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Material(
                                   elevation: 10,
@@ -178,15 +184,21 @@ class MyHomePage extends StatelessWidget {
                                   child: Image.network(
                                       'https://i.postimg.cc/6qMTfNpM/google-symbol.png',
                                       height: 25,
-                                      width: 25
-                                  ),
+                                      width: 25),
                                 ),
-                                SizedBox(width: 20,),
+                                SizedBox(
+                                  width: 20,
+                                ),
                                 Material(
                                   elevation: 10,
                                   borderRadius: BorderRadius.circular(10),
-                                  child: Padding(padding: EdgeInsets.all(4),
-                                  child: Image.network('https://i.postimg.cc/wT9GtYNS/twitter-4.png', height: 25, width: 25,)),
+                                  child: Padding(
+                                      padding: EdgeInsets.all(4),
+                                      child: Image.network(
+                                        'https://i.postimg.cc/wT9GtYNS/twitter-4.png',
+                                        height: 25,
+                                        width: 25,
+                                      )),
                                 )
                               ],
                             ),
