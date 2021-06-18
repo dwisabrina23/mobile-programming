@@ -74,7 +74,7 @@ class _MyAppState extends State<MyApp> {
   void showToast() {
     setState(() {
       Fluttertoast.showToast(
-        msg: 'This is notification drom toast',
+        msg: 'This is notification from toast',
         toastLength: Toast.LENGTH_LONG,
         gravity: ToastGravity.BOTTOM,
       );
